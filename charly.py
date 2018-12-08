@@ -288,7 +288,7 @@ async def fail(event, liste):
 
 
 async def manuallynch(event, liste):
-    message = bot.send_message('@clone_army', event.message, buttons=liste)
+    message = await bot.send_message('@clone_army', event.message, buttons=liste)
     response = await await_event(bot, "@Clone_Army", events.CallbackQuery)
     try:
         await event.message.click(data=response.data)
